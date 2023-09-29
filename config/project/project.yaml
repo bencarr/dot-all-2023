@@ -1,0 +1,22 @@
+dateModified: 1696015698
+email:
+  fromEmail: ben.carr@me.com
+  fromName: 'Dot All 2023'
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    38bcbdf5-93fa-4172-8b3e-277c3daa43dd: Common # Common
+    bee2f70a-9ca7-4fdc-8afd-22f4312b5b4b: 'Dot All 2023' # Dot All 2023
+    fd7c118a-a73d-4dff-91d3-5e89d6d97e39: 'Dot All 2023' # Dot All 2023
+system:
+  edition: solo
+  live: true
+  name: 'Dot All 2023'
+  schemaVersion: 4.5.3.0
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true
