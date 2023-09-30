@@ -10,7 +10,11 @@
 </head>
 <body>
 <header>
-    <a href="{{ url('/') }}">Dot All 2023</a>
+    <a href="{{ url('/') }}" class="logo">
+        {{ icon('craft-logo', { class: 'logo-icon' }) }}
+        <b class="logo-title">A Little More Custom</b>
+        <i class="logo-subtitle">By Ben Carr</i>
+    </a>
 </header>
 <main>
     {% block main %}{% endblock %}
