@@ -26,6 +26,8 @@ return GeneralConfig::create()
     ->disallowRobots(App::env('DISALLOW_ROBOTS') ?? false)
     // Prevent user enumeration attacks
     ->preventUserEnumeration()
+    // Set system timezone
+    ->timezone('America/New_York')
     // Set the @webroot alias so the clear-caches command knows where to find CP resources
     ->aliases([
         '@webroot' => dirname(__DIR__) . '/web',
