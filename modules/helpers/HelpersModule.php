@@ -8,6 +8,7 @@ use craft\events\DefineBehaviorsEvent;
 use craft\events\RegisterElementActionsEvent;
 use modules\helpers\behaviors\DateRangeBehavior;
 use modules\helpers\elements\actions\RequestContentUpdate;
+use modules\helpers\web\twig\HostnameExtension;
 use modules\helpers\web\twig\IconExtension;
 use yii\base\Event;
 use yii\base\Module as BaseModule;
@@ -37,6 +38,7 @@ class HelpersModule extends BaseModule
         });
 
         Craft::$app->view->registerTwigExtension(new IconExtension());
+        Craft::$app->view->registerTwigExtension(new HostnameExtension());
     }
 
     protected function addCustomDateRangeDisplay(): void

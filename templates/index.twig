@@ -29,7 +29,8 @@
                 <li>
                     <article>
                         <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
-                        <time>{{ entry.postDate | date('M j, Y') }}</time>
+                        <time>{{ article.postDate | date('M j, Y') }}</time>
+                        (<a href="{{ article.externalUrl }}" target="_blank">{{ article.externalUrl | hostname }}</a>)
                     </article>
                 </li>
             {% endfor %}

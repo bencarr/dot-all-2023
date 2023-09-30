@@ -3,4 +3,5 @@
     <small>{{ entry.section.name }}</small>
     <h1>{{ entry.title }}</h1>
     <p>{{ entry.postDate | date('M j, Y') }}</p>
+    <a href="{{ entry.externalUrl }}" target="_blank">Read on {{ entry.externalUrl | hostname }}</a>
 {% endblock %}
