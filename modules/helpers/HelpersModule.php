@@ -10,10 +10,12 @@ use craft\events\RegisterComponentTypesEvent;
 use craft\events\RegisterElementActionsEvent;
 use craft\events\RegisterTemplateRootsEvent;
 use craft\services\Dashboard;
+use craft\services\Utilities;
 use craft\web\View;
 use modules\helpers\behaviors\DateRangeBehavior;
 use modules\helpers\elements\actions\RefreshFromHRIS;
 use modules\helpers\elements\actions\RequestContentUpdate;
+use modules\helpers\utilities\ConnectionTester;
 use modules\helpers\web\twig\HostnameExtension;
 use modules\helpers\web\twig\IconExtension;
 use modules\helpers\widgets\NotesWidget;
@@ -45,6 +47,7 @@ class HelpersModule extends BaseModule
             $this->addActionForRequestingContentUpdate();
             $this->addActionForRefreshingUserFromHRIS();
             $this->addDashboardWidgets();
+            $this->addConnectionTesterUtility();
         });
 
         Craft::$app->view->registerTwigExtension(new IconExtension());
@@ -54,7 +57,9 @@ class HelpersModule extends BaseModule
     protected function addCustomDateRangeDisplay(): void
     {
         Event::on(Entry::class, Entry::EVENT_DEFINE_BEHAVIORS, function(DefineBehaviorsEvent $event) {
-            $event->behaviors[] = DateRangeBehavior::class;
+            if ($event->sender->sectionId && $event->sender->section->handle === 'events') {
+                $event->behaviors[] = DateRangeBehavior::class;
+            }
         });
     }
 
@@ -83,6 +88,13 @@ class HelpersModule extends BaseModule
         Event::on(Dashboard::class, Dashboard::EVENT_REGISTER_WIDGET_TYPES, function(RegisterComponentTypesEvent $event) {
             $event->types[] = RandomEntryWidget::class;
             $event->types[] = NotesWidget::class;
+        });
+    }
+
+    protected function addConnectionTesterUtility()
+    {
+        Event::on(Utilities::class, Utilities::EVENT_REGISTER_UTILITY_TYPES, function(RegisterComponentTypesEvent $event) {
+            $event->types[] = ConnectionTester::class;
         });
     }
 }
