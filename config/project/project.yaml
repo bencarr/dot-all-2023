@@ -88,7 +88,7 @@ meta:
     bfee7b23-6204-42ce-8c54-71c0638f7d28: Events # Events
     fd7c118a-a73d-4dff-91d3-5e89d6d97e39: 'Dot All 2023' # Dot All 2023
 system:
-  edition: solo
+  edition: pro
   live: true
   name: 'Dot All 2023'
   schemaVersion: 4.5.3.0
