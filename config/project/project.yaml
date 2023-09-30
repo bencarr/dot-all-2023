@@ -1,4 +1,4 @@
-dateModified: 1696037279
+dateModified: 1696040315
 elementSources:
   craft\elements\Entry:
     -
@@ -74,6 +74,7 @@ email:
   transportType: craft\mail\transportadapters\Smtp
 meta:
   __names__:
+    4d64d37c-4677-4b4f-b52b-942a3ed9350b: 'External URL' # External URL
     05e4f8d2-2062-49c3-8b10-70244d0bf3a4: Homepage # Homepage
     5eba40e5-bec1-4ba1-8e43-fa028f6a68e3: 'End Date' # End Date
     7cd0e884-469e-42be-b170-eb349eb844f8: Homepage # Homepage

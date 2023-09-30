@@ -1,0 +1,14 @@
+columnSuffix: tiyxorki
+contentColumnType: string(255)
+fieldGroup: 38bcbdf5-93fa-4172-8b3e-277c3daa43dd # Common
+handle: externalUrl
+instructions: null
+name: 'External URL'
+searchable: false
+settings:
+  maxLength: 255
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url
