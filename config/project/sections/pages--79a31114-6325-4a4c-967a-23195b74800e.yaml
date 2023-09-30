@@ -1,0 +1,15 @@
+defaultPlacement: end
+enableVersioning: true
+handle: pages
+name: Pages
+propagationMethod: all
+siteSettings:
+  fd7c118a-a73d-4dff-91d3-5e89d6d97e39: # Dot All 2023
+    enabledByDefault: true
+    hasUrls: true
+    template: page.twig
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: null
+  uid: d662863e-97a3-4440-bea9-c7e914f67917
+type: structure

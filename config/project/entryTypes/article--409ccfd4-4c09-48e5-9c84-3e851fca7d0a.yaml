@@ -1,0 +1,46 @@
+fieldLayouts:
+  85b9e2d6-f670-49d5-933e-e817b0800060:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: a99a5b08-cea2-4900-a784-2b939046e31c
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 87091e60-83da-4835-9ce3-685d6e2bc7e1
+        userCondition: null
+handle: article
+hasTitleField: true
+name: Article
+section: 84545700-c94f-4022-a63c-eca5c100b407 # Articles
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

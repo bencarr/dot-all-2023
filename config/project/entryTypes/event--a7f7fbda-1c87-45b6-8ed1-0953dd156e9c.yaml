@@ -1,0 +1,70 @@
+fieldLayouts:
+  c3d19e48-1a7d-49c7-887f-133025851d1d:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 53c0a72d-47a8-4061-9b51-8e13145ecc6b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 2069b7d7-f499-4d15-a125-7fa611e854f9 # Start Date
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 826b40e5-76cc-4edc-a1d9-854edd57bcc9
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 5eba40e5-bec1-4ba1-8e43-fa028f6a68e3 # End Date
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 831958a5-cb7a-4a1f-8910-a0562d60752b
+            userCondition: null
+            warning: null
+            width: 50
+        name: Content
+        uid: e889ce27-18f9-4e66-8800-da19f1412d21
+        userCondition: null
+handle: event
+hasTitleField: true
+name: Event
+section: bfee7b23-6204-42ce-8c54-71c0638f7d28 # Events
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

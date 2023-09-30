@@ -1,0 +1,17 @@
+columnSuffix: gmzpinoy
+contentColumnType: datetime
+fieldGroup: 38bcbdf5-93fa-4172-8b3e-277c3daa43dd # Common
+handle: endDate
+instructions: null
+name: 'End Date'
+searchable: false
+settings:
+  max: null
+  min: null
+  minuteIncrement: 30
+  showDate: true
+  showTime: false
+  showTimeZone: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Date

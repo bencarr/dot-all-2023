@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en_US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>{{ title ?? entry.title ?? siteName }}</title>
+
+    <link rel="stylesheet" href="{{ url('style.css') }}"/>
+</head>
+<body>
+<header>
+    <a href="{{ url('/') }}">Dot All 2023</a>
+</header>
+<main>
+    {% block main %}{% endblock %}
+</main>
+</body>
+</html>

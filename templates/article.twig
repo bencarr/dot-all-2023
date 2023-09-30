@@ -1,0 +1,5 @@
+{% extends '_layout.twig' %}
+{% block main %}
+    <h1>{{ entry.title }}</h1>
+    <p>{{ entry.postDate | date('M j, Y') }}</p>
+{% endblock %}

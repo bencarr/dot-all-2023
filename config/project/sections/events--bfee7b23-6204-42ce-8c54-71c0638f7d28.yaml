@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: events
+name: Events
+propagationMethod: all
+siteSettings:
+  fd7c118a-a73d-4dff-91d3-5e89d6d97e39: # Dot All 2023
+    enabledByDefault: true
+    hasUrls: true
+    template: event.twig
+    uriFormat: 'events/{slug}'
+type: channel

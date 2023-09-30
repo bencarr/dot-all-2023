@@ -1,12 +1,91 @@
-dateModified: 1696015698
+dateModified: 1696037279
+elementSources:
+  craft\elements\Entry:
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: '*'
+      tableAttributes:
+        - section
+        - postDate
+        - expiryDate
+        - author
+        - link
+      type: native
+    -
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: craft\elements\conditions\entries\TypeConditionRule
+            operator: in
+            uid: afd396e3-bf37-4290-b9bc-264b201b1df4
+            values:
+              - 05e4f8d2-2062-49c3-8b10-70244d0bf3a4 # Homepage
+        elementType: craft\elements\Entry
+        fieldContext: global
+      defaultSort:
+        - title
+        - asc
+      key: 'custom:47851712-0184-4082-add8-609dc4178ae8'
+      label: Homepage
+      tableAttributes:
+        - link
+      type: custom
+    -
+      key: 'section:79a31114-6325-4a4c-967a-23195b74800e' # Pages
+      type: native
+    -
+      key: 'section:84545700-c94f-4022-a63c-eca5c100b407' # Articles
+      type: native
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: 'section:bfee7b23-6204-42ce-8c54-71c0638f7d28' # Events
+      tableAttributes:
+        - 'field:2069b7d7-f499-4d15-a125-7fa611e854f9' # Start Date
+        - 'field:5eba40e5-bec1-4ba1-8e43-fa028f6a68e3' # End Date
+        - link
+      type: native
+    -
+      defaultSort:
+        - title
+        - asc
+      disabled: true
+      key: singles
+      tableAttributes:
+        - link
+      type: native
 email:
-  fromEmail: ben.carr@me.com
+  fromEmail: dot-all-2023@example.com
   fromName: 'Dot All 2023'
-  transportType: craft\mail\transportadapters\Sendmail
+  replyToEmail: null
+  template: null
+  transportSettings:
+    host: localhost
+    password: ''
+    port: '1025'
+    useAuthentication: '0'
+    username: ''
+  transportType: craft\mail\transportadapters\Smtp
 meta:
   __names__:
+    05e4f8d2-2062-49c3-8b10-70244d0bf3a4: Homepage # Homepage
+    5eba40e5-bec1-4ba1-8e43-fa028f6a68e3: 'End Date' # End Date
+    7cd0e884-469e-42be-b170-eb349eb844f8: Homepage # Homepage
     38bcbdf5-93fa-4172-8b3e-277c3daa43dd: Common # Common
+    79a31114-6325-4a4c-967a-23195b74800e: Pages # Pages
+    409ccfd4-4c09-48e5-9c84-3e851fca7d0a: Article # Article
+    2069b7d7-f499-4d15-a125-7fa611e854f9: 'Start Date' # Start Date
+    84545700-c94f-4022-a63c-eca5c100b407: Articles # Articles
+    99795880-7796-4620-9695-e4b20f854ad9: Page # Page
+    a7f7fbda-1c87-45b6-8ed1-0953dd156e9c: Event # Event
     bee2f70a-9ca7-4fdc-8afd-22f4312b5b4b: 'Dot All 2023' # Dot All 2023
+    bfee7b23-6204-42ce-8c54-71c0638f7d28: Events # Events
     fd7c118a-a73d-4dff-91d3-5e89d6d97e39: 'Dot All 2023' # Dot All 2023
 system:
   edition: solo
