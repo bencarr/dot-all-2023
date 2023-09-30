@@ -1,0 +1,31 @@
+<h2>Connection Tester</h2>
+
+{% set connections = [
+    { name: 'HRIS API Endpoint', status: 'active' },
+    { name: 'Back-office ERP API', status: 'pending' },
+    { name: 'Customer Support Tracker', status: 'off' },
+] %}
+
+<table class="fullwidth">
+    <thead>
+    <tr>
+        <th>Service</th>
+        <th>Last Checked</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for connection in connections %}
+        <tr>
+            <td>
+                <span class="status {{ connection.status }}" role="img" aria-label="Status: {{ connection.status | capitalize }}"></span>
+                {{ connection.name }}
+            </td>
+            <td>{{ '%s minutes ago' | format(random(1, 15)) | date('M j, Y g:ia') }}</td>
+            <td>
+                <a href="">Refresh</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
