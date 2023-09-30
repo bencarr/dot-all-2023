@@ -4,9 +4,11 @@ namespace modules\helpers;
 
 use Craft;
 use craft\elements\Entry;
+use craft\elements\User;
 use craft\events\DefineBehaviorsEvent;
 use craft\events\RegisterElementActionsEvent;
 use modules\helpers\behaviors\DateRangeBehavior;
+use modules\helpers\elements\actions\RefreshFromHRIS;
 use modules\helpers\elements\actions\RequestContentUpdate;
 use modules\helpers\web\twig\HostnameExtension;
 use modules\helpers\web\twig\IconExtension;
@@ -35,6 +37,7 @@ class HelpersModule extends BaseModule
         Craft::$app->onInit(function() {
             $this->addCustomDateRangeDisplay();
             $this->addActionForRequestingContentUpdate();
+            $this->addActionForRefreshingUserFromHRIS();
         });
 
         Craft::$app->view->registerTwigExtension(new IconExtension());
@@ -52,6 +55,13 @@ class HelpersModule extends BaseModule
     {
         Event::on(Entry::class, Entry::EVENT_REGISTER_ACTIONS, function(RegisterElementActionsEvent $event) {
             $event->actions[] = RequestContentUpdate::class;
+        });
+    }
+
+    protected function addActionForRefreshingUserFromHRIS(): void
+    {
+        Event::on(User::class, User::EVENT_REGISTER_ACTIONS, function(RegisterElementActionsEvent $event) {
+            $event->actions[] = RefreshFromHRIS::class;
         });
     }
 }
