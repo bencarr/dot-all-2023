@@ -1,6 +1,6 @@
 # A Little More Custom
 
-👋 Hey Craft friends! Thanks for checking out my talk, [“A Little More Custom”](https://craftcms.com/events/dot-all-2023/sessions/a-little-more-custom), which I gave at Dot All 2023 in Barcelona!
+👋 Hey Craft friends! Thanks for checking out my talk, [“A Little More Custom”](https://craftcms.com/events/dot-all-2023/sessions/a-little-more-custom), which I gave at [Dot All 2023](https://craftcms.com/events/dot-all-2023) in Barcelona!
 
 As a supplement, this repository provides working examples of all the functionality covered in the talk. Most of the customizations live inside a helpers module
 in `modules/helpers`. If you want to run the site, I've also included a CLI command to generate a small bit of content to help illustrate some of the examples, which you can find in the Installation section.
@@ -29,7 +29,7 @@ php craft helpers/generate-content
 
 ## Element Actions
 
-I've created two example actions based on my examples in the talk.
+I've created two example actions based on my examples in the talk, and you can find more information about [Element Actions](https://craftcms.com/docs/4.x/extend/element-actions.html) page in the Craft docs.
 
 ### Refresh from HRIS
 
@@ -52,7 +52,7 @@ for finding the author of the provided entry ID, and sending the message with li
 
 ## Twig Extensions
 
-I've included the actual extensions from the two examples I mentioned in the talk.
+I've included the actual extensions from the two examples I mentioned in the talk, and you can find more information about making Twig Extensions for Craft on the [Extending Twig](https://craftcms.com/docs/4.x/extend/extending-twig.html#create-a-twig-extension) page in the Craft docs, and more information about the other ways you can extend Twig on the [Extending Twig](https://twig.symfony.com/doc/3.x/advanced.html) page of the Twig docs. 
 
 ### Hostname Filter
 
@@ -79,7 +79,7 @@ The Icon Extension provides a single `icon` function, which accepts either the n
 
 ## Behaviors
 
-I’ve included a behavior based on the example I used in the talk.
+I’ve included a behavior based on the example I used in the talk, and you can find more information on the [Behaviors](https://craftcms.com/docs/4.x/extend/behaviors.html) page in the Craft docs.
 
 ### Date Range Behavior
 
@@ -92,7 +92,7 @@ The “Date Range Behavior” is registered only `Entry` class, and limited to o
 
 ## Dashboard Widgets
 
-I’ve included two example dashboard widgets to demonstrate how widgets can be created, including storing state.
+I’ve included two example dashboard widgets to demonstrate how widgets can be created, including storing state, and you can find more information on the [Widget Types](https://craftcms.com/docs/4.x/extend/widget-types.html) page in the Craft docs.
 
 ### Random Entry Widget
 
@@ -116,7 +116,7 @@ The widget body renders the note by accessing it from the widget instance. When 
 
 ## Utility Types
 
-I’ve included an example widget similar to an example I mentioned in the talk.
+I’ve included an example widget similar to an example I mentioned in the talk, and you can find more information on the [Utilities](https://craftcms.com/docs/4.x/extend/utilities.html) page of the Craft docs
 
 ### Connection Tester
 
