@@ -6,12 +6,18 @@ use Craft;
 use craft\elements\Entry;
 use craft\elements\User;
 use craft\events\DefineBehaviorsEvent;
+use craft\events\RegisterComponentTypesEvent;
 use craft\events\RegisterElementActionsEvent;
+use craft\events\RegisterTemplateRootsEvent;
+use craft\services\Dashboard;
+use craft\web\View;
 use modules\helpers\behaviors\DateRangeBehavior;
 use modules\helpers\elements\actions\RefreshFromHRIS;
 use modules\helpers\elements\actions\RequestContentUpdate;
 use modules\helpers\web\twig\HostnameExtension;
 use modules\helpers\web\twig\IconExtension;
+use modules\helpers\widgets\NotesWidget;
+use modules\helpers\widgets\RandomEntryWidget;
 use yii\base\Event;
 use yii\base\Module as BaseModule;
 
@@ -38,6 +44,7 @@ class HelpersModule extends BaseModule
             $this->addCustomDateRangeDisplay();
             $this->addActionForRequestingContentUpdate();
             $this->addActionForRefreshingUserFromHRIS();
+            $this->addDashboardWidgets();
         });
 
         Craft::$app->view->registerTwigExtension(new IconExtension());
@@ -62,6 +69,20 @@ class HelpersModule extends BaseModule
     {
         Event::on(User::class, User::EVENT_REGISTER_ACTIONS, function(RegisterElementActionsEvent $event) {
             $event->actions[] = RefreshFromHRIS::class;
+        });
+    }
+
+    protected function addDashboardWidgets(): void
+    {
+        // Register a template root for the `templates` directory inside our module
+        Event::on(View::class, View::EVENT_REGISTER_CP_TEMPLATE_ROOTS, function(RegisterTemplateRootsEvent $event) {
+            $event->roots['helpers'] = __DIR__ . '/templates';
+        });
+
+        // Register our two dashboard widgets
+        Event::on(Dashboard::class, Dashboard::EVENT_REGISTER_WIDGET_TYPES, function(RegisterComponentTypesEvent $event) {
+            $event->types[] = RandomEntryWidget::class;
+            $event->types[] = NotesWidget::class;
         });
     }
 }

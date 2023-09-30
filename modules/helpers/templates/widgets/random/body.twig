@@ -1,0 +1,3 @@
+{% set element = craft.entries.orderBy('RAND()').one() %}
+
+{% hook 'cp.elements.element' %}
