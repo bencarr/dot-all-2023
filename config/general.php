@@ -20,6 +20,8 @@ return GeneralConfig::create()
     ->devMode(App::env('DEV_MODE') ?? false)
     // Preload Single entries as Twig variables
     ->preloadSingles()
+    // Turn off GraphQL
+    ->enableGql(false)
     // Allow administrative changes
     ->allowAdminChanges(App::env('ALLOW_ADMIN_CHANGES') ?? false)
     // Disallow robots
