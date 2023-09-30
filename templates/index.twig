@@ -27,8 +27,10 @@
         <ul>
             {% for article in articles %}
                 <li>
-                    <a href="{{ article.url }}">{{ article.title }}</a><br>
-                    {{ entry.postDate | date('M j, Y') }}
+                    <article>
+                        <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+                        <time>{{ entry.postDate | date('M j, Y') }}</time>
+                    </article>
                 </li>
             {% endfor %}
         </ul>
@@ -40,8 +42,10 @@
         <ul>
             {% for event in events %}
                 <li>
-                    <a href="{{ event.url }}">{{ event.title }}</a><br>
-                    {{ event.dateRange }}
+                    <article>
+                        <h3><a href="{{ event.url }}">{{ event.title }}</a></h3>
+                        <time>{{ event.dateRange }}</time>
+                    </article>
                 </li>
             {% endfor %}
         </ul>
