@@ -3,6 +3,10 @@
 namespace modules\helpers;
 
 use Craft;
+use craft\elements\Entry;
+use craft\events\DefineBehaviorsEvent;
+use modules\helpers\behaviors\DateRangeBehavior;
+use yii\base\Event;
 use yii\base\Module as BaseModule;
 
 /**
@@ -25,14 +29,14 @@ class HelpersModule extends BaseModule
 
         // Defer most setup tasks until Craft is fully initialized
         Craft::$app->onInit(function() {
-            $this->attachEventHandlers();
-            // ...
+            $this->addCustomDateRangeDisplay();
         });
     }
 
-    private function attachEventHandlers(): void
+    protected function addCustomDateRangeDisplay(): void
     {
-        // Register event handlers here ...
-        // (see https://craftcms.com/docs/4.x/extend/events.html to get started)
+        Event::on(Entry::class, Entry::EVENT_DEFINE_BEHAVIORS, function(DefineBehaviorsEvent $event) {
+            $event->behaviors[] = DateRangeBehavior::class;
+        });
     }
 }

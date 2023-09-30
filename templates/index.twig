@@ -41,7 +41,10 @@
 
         <ul>
             {% for event in events %}
-                <li><a href="{{ event.url }}">{{ event.title }}</a></li>
+                <li>
+                    <a href="{{ event.url }}">{{ event.title }}</a><br>
+                    {{ event.dateRange }}
+                </li>
             {% endfor %}
         </ul>
     </section>
