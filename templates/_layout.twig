@@ -19,5 +19,13 @@
 <main>
     {% block main %}{% endblock %}
 </main>
+{% if currentUser and currentUser.admin %}
+    <footer>
+        <a href="{{ entry.cpEditUrl }}" class="edit-button">
+            {{ icon('pencil-square', { class: 'edit-button-icon' }) }}
+            Edit {{ entry.type.name }}
+        </a>
+    </footer>
+{% endif %}
 </body>
 </html>

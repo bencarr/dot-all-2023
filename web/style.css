@@ -33,3 +33,24 @@ header {
 .logo-title {
     font-size: 1.25em;
 }
+
+.edit-button {
+    display: inline-flex;
+    gap: 0.25em;
+    align-items: center;
+}
+
+.edit-button svg {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+small {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.875em;
+}
+
+small + h1 {
+    margin-top: 0;
+}
