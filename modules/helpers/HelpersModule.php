@@ -5,7 +5,9 @@ namespace modules\helpers;
 use Craft;
 use craft\elements\Entry;
 use craft\events\DefineBehaviorsEvent;
+use craft\events\RegisterElementActionsEvent;
 use modules\helpers\behaviors\DateRangeBehavior;
+use modules\helpers\elements\actions\RequestContentUpdate;
 use yii\base\Event;
 use yii\base\Module as BaseModule;
 
@@ -30,6 +32,7 @@ class HelpersModule extends BaseModule
         // Defer most setup tasks until Craft is fully initialized
         Craft::$app->onInit(function() {
             $this->addCustomDateRangeDisplay();
+            $this->addActionForRequestingContentUpdate();
         });
     }
 
@@ -37,6 +40,13 @@ class HelpersModule extends BaseModule
     {
         Event::on(Entry::class, Entry::EVENT_DEFINE_BEHAVIORS, function(DefineBehaviorsEvent $event) {
             $event->behaviors[] = DateRangeBehavior::class;
+        });
+    }
+
+    protected function addActionForRequestingContentUpdate(): void
+    {
+        Event::on(Entry::class, Entry::EVENT_REGISTER_ACTIONS, function(RegisterElementActionsEvent $event) {
+            $event->actions[] = RequestContentUpdate::class;
         });
     }
 }

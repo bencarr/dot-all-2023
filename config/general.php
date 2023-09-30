@@ -26,6 +26,8 @@ return GeneralConfig::create()
     ->disallowRobots(App::env('DISALLOW_ROBOTS') ?? false)
     // Prevent user enumeration attacks
     ->preventUserEnumeration()
+    // Ensure CP URLs are generated as absolute instead of root-relative paths
+    ->baseCpUrl(App::env('PRIMARY_SITE_URL'))
     // Set system timezone
     ->timezone('America/New_York')
     // Set the @webroot alias so the clear-caches command knows where to find CP resources
